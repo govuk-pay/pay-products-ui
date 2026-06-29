@@ -55,8 +55,8 @@ describe('The payment link start page', () => {
       cy.get('[data-cy=header]')
         .find('.govuk-header__container')
         .should('have.css', 'border-bottom-color', 'rgb(255, 255, 255)')
-      cy.get('[data-cy=header]')
-        .find('.govuk-header__service-name')
+      cy.get('[data-cy=service-navigation]')
+        .find('.govuk-service-navigation__text')
         .should('contain', productName)
     })
 
