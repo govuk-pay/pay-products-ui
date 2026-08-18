@@ -141,7 +141,7 @@ describe('payment complete controller', () => {
 
       it('should redirect to the payment success page', () => {
         expect($('title').text()).to.include(`Your payment was successful - ${service.service_name.en}`)
-        expect($('.govuk-header__content').text()).to.include(product.name)
+        expect($('.govuk-service-navigation__text').text()).to.include(product.name)
         expect($('#payment-reference').text()).to.equal('ABCD1234EF')
         expect($('#payment-amount').text()).to.equal('£20.00')
         expect($('a.dashboard-link').length).to.equal(0)
@@ -185,7 +185,7 @@ describe('payment complete controller', () => {
 
       it('should redirect to the payment success page', () => {
         expect($('title').text()).to.include(`Roedd eich taliad yn llwyddiannus - ${service.service_name.cy}`)
-        expect($('.govuk-header__content').text()).to.include(product.name)
+        expect($('.govuk-service-navigation__text').text()).to.include(product.name)
         expect($('#payment-reference').text()).to.equal('ABCD1234EF')
         expect($('#payment-amount').text()).to.equal('£20.00')
         expect($('a.dashboard-link').length).to.equal(0)
@@ -260,7 +260,7 @@ describe('payment complete controller', () => {
 
       it('should redirect to the payment success page', () => {
         expect($('title').text()).to.include(`The payment was successful - ${service.service_name.en}`)
-        expect($('.govuk-header__content').text()).to.include(service.service_name.en)
+        expect($('.govuk-service-navigation__text').text()).to.include(service.service_name.en)
         expect($('#payment-reference').text()).to.equal('ABCD1234EF')
         expect($('#payment-amount').text()).to.equal('£20.00')
         expect($('a.dashboard-link').text()).to.include('Go to the dashboard')
