@@ -1,7 +1,6 @@
 FROM node:22.23.2-alpine@sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32 AS base
 
-RUN apk upgrade --no-cache \
-    && apk add --no-cache tini
+RUN apk upgrade --no-cache
 
 FROM base AS builder
 
@@ -25,14 +24,15 @@ COPY --from=builder /build-stage/app ./app
 COPY --from=builder /build-stage/config ./config
 COPY --from=builder /build-stage/locales ./locales
 
-RUN rm -rf /usr/local/lib/node_modules/npm \
-    /usr/local/lib/node_modules/corepack \
-    /usr/local/bin/npm \
-    /usr/local/bin/npx \
-    /usr/local/bin/corepack \
-    /opt/yarn-* \
-    /usr/local/bin/yarn \
-    /usr/local/bin/yarnpkg
+RUN apk add --no-cache tini \
+    && rm -rf /usr/local/lib/node_modules/npm \
+        /usr/local/lib/node_modules/corepack \
+        /usr/local/bin/npm \
+        /usr/local/bin/npx \
+        /usr/local/bin/corepack \
+        /opt/yarn-* \
+        /usr/local/bin/yarn \
+        /usr/local/bin/yarnpkg
 
 ENV PORT=9000
 EXPOSE 9000
