@@ -2,6 +2,7 @@
   "name": "pay-products-ui",
   "description": "Payments products ui application",
   "version": "0.0.1-SNAPSHOT",
+  "main": "config/start.js",
   "private": true,
   "license": "MIT",
   "engines": {
