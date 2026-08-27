@@ -4,7 +4,7 @@ const { stubBuilder } = require('./stub-builder')
 
 /**
  * @param {String} productExternalId
- * @param {String} errorIdentifier An {@link https://github.com/alphagov/pay-java-commons/blob/master/model/src/main/java/uk/gov/service/payments/commons/model/ErrorIdentifier.java}
+ * @param {String} errorIdentifier An {@link https://github.com/govuk-pay/pay-java-commons/blob/master/model/src/main/java/uk/gov/service/payments/commons/model/ErrorIdentifier.java}
  * @return {{predicates: [*], name: string, responses: [{is: {headers, statusCode: *}}]}}
  */
 function createPaymentErrorStub (productExternalId, errorIdentifier) {
