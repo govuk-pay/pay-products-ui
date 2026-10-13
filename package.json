@@ -126,7 +126,6 @@
     "standard": "^17.1.2",
     "stylelint": "^15.10.3",
     "stylelint-config-gds": "^1.0.0",
-    "stylelint-order": "^6.0.3",
     "supertest": "^6.3.3"
   },
   "overrides": {
